@@ -1,0 +1,32 @@
+// Plugins necesarios para el proyecto, en este caso, se utiliza el plugin Java.
+plugins {
+    id 'java'
+}
+
+// Configuración del grupo y la versión del proyecto.
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+// Configuración de los repositorios de donde se obtendrán las dependencias del proyecto.
+repositories {
+    mavenCentral()
+}
+
+// Definición de las dependencias del proyecto.
+dependencies {
+    // Implementación de Selenium Chrome Driver para controlar el navegador Chrome.
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-chrome-driver', version: '4.20.0'
+    // Implementación del servidor Selenium.
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-server', version: '3.141.59'
+    // Implementación de Selenium Java para la automatización de pruebas.
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.20.0'
+    // Implementación de Cucumber para escribir pruebas BDD en Java.
+    implementation group: 'io.cucumber', name: 'cucumber-java', version: '7.17.0'
+    // Implementación de Cucumber JUnit para ejecutar pruebas Cucumber con JUnit.
+    testImplementation group: 'io.cucumber', name: 'cucumber-junit', version: '7.17.0'
+}
+
+// Configuración para utilizar JUnit Platform en las pruebas.
+test {
+    useJUnitPlatform()
+}
